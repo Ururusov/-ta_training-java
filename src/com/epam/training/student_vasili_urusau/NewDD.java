@@ -14,7 +14,7 @@ public class NewDD {
             System.out.println("number " + result.getMinNumber() + " have " + result.getQuantity() + " a different digits "
                     + result.getMinDifferentDigits());
         }else {
-            System.out.println("sorry, you...");
+            System.out.println("sorry, you didn't enter data... Try again.");
         }
     }
 

@@ -1,11 +1,13 @@
 package com.epam.training.student_vasili_urusau.fundamental.options.task1;
 
+import com.epam.training.student_vasili_urusau.fundamental.options.UtilMethodInPut;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EvenOdd {
     public static void main(String[] args) {
-        ArrayList arrayList = createArray();
+        ArrayList arrayList = UtilMethodInPut.createArray();
         oddDigits(arrayList);
 
         // System.out.println(arrayList.get(0).getClass());
