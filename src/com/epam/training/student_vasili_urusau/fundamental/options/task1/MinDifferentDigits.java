@@ -4,19 +4,20 @@ import com.epam.training.student_vasili_urusau.fundamental.options.UtilMethodInP
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class MinDifferentDigits {
 
     public static void main(String[] args) {
-        ArrayList arrayList = UtilMethodInPut.createArray();
+        List arrayList = UtilMethodInPut.createArray();
         differentDigits(arrayList);
 
     }
 
 
 
-    public static void differentDigits(ArrayList<Integer> list){
+    public static void differentDigits(List<Integer> list){
         int k = 0;
         int minDigits = 10;//Integer.MAX_VALUE;
         int minNumber = 0;

@@ -3,17 +3,18 @@ package com.epam.training.student_vasili_urusau.fundamental.options.task1;
 import com.epam.training.student_vasili_urusau.fundamental.options.UtilMethodInPut;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class SequenceLength {
 
     public static void main(String[] args) {
-        ArrayList list = UtilMethodInPut.createArray();
+        List list = UtilMethodInPut.createArray();
         sort(list);
     }
 
 
-    public static void sort(ArrayList<Integer> array) {
+    public static void sort(List<Integer> array) {
         ArrayList spare = new ArrayList();
         spare.addAll(array);
         int i = 0;

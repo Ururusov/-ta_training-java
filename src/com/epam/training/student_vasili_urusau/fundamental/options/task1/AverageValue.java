@@ -3,20 +3,21 @@ package com.epam.training.student_vasili_urusau.fundamental.options.task1;
 import com.epam.training.student_vasili_urusau.fundamental.options.UtilMethodInPut;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AverageValue {
     public static void main(String[] args) {
-        ArrayList arrayList = UtilMethodInPut.createArray();
+        List arrayList = UtilMethodInPut.createArray();
         average(arrayList);
     }
 
 
-    public static void average(ArrayList<Integer> arrayList){
-        int averageLength;
+    public static void average(List<Integer> arrayList){
+        double averageLength;
         int sum = 0 ;
         for (int i = 0; i < arrayList.size(); i++)
             sum += Integer.toString(Math.abs(arrayList.get(i))).length();
-        averageLength = sum / arrayList.size();
+        averageLength = Math.ceil((double) sum /(double) arrayList.size());
         System.out.println("Average length = " + averageLength +
                 "; sumLengthNumber/quantityNumber = " + sum + "/" + arrayList.size());
         System.out.println("Number for length ander average");

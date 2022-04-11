@@ -3,17 +3,18 @@ package com.epam.training.student_vasili_urusau.fundamental.options.task1;
 import com.epam.training.student_vasili_urusau.fundamental.options.UtilMethodInPut;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class SequenceDigits {
 
     public static void main(String[] args) {
-        ArrayList arrayList = UtilMethodInPut.createArray();
+        List arrayList = UtilMethodInPut.createArray();
         haveSequence(arrayList);
     }
 
 
-    public static void haveSequence(ArrayList<Integer> arrayList){
+    public static void haveSequence(List<Integer> arrayList){
         int i = 0;
         while (i < arrayList.size()){
             char[] digits = Integer.toString(Math.abs(arrayList.get(i))).toCharArray();

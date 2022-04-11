@@ -3,37 +3,20 @@ package com.epam.training.student_vasili_urusau.fundamental.options.task1;
 import com.epam.training.student_vasili_urusau.fundamental.options.UtilMethodInPut;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class EvenOdd {
     public static void main(String[] args) {
-        ArrayList arrayList = UtilMethodInPut.createArray();
+        List arrayList = UtilMethodInPut.createArray();
         oddDigits(arrayList);
 
         // System.out.println(arrayList.get(0).getClass());
     }
 
-    public static ArrayList createArray() {
-        Scanner scan = new Scanner(System.in);
-        ArrayList list = new ArrayList();
-        System.out.println("Accept numbers, for ending accept 'ok'");
-        while (scan.hasNext()) {
-            if (scan.hasNextInt()) {
-                list.add(scan.nextInt());
-            } else {
-                String str = scan.next();
-                if (str.equals("ok")) {
-                    System.out.println("array accepted");
-                    break;
-                }
-            }
-        }
-        scan.close();
-        System.out.println(list);
-        return list;
-    }
 
-    public static void oddDigits(ArrayList<Integer> arrayList) {
+
+    public static void oddDigits(List<Integer> arrayList) {
         int totalOdd = 0;
         int totalOddHalf = 0;
         ArrayList odd = new ArrayList<>();

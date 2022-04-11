@@ -4,16 +4,17 @@ import com.epam.training.student_vasili_urusau.fundamental.options.UtilMethodInP
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class DifferentDigits {
     public static void main(String[] args) {
-        ArrayList arrayList = UtilMethodInPut.createArray();
+        List arrayList = UtilMethodInPut.createArray();
         differentDigits(arrayList);
     }
 
 
-    public static void differentDigits(ArrayList<Integer> list){
+    public static void differentDigits(List<Integer> list){
         int k = 0;
         while (k < list.size()) {
             char charNumber[] = Integer.toString(Math.abs(list.get(k))).toCharArray();

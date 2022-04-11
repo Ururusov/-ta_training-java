@@ -3,16 +3,17 @@ package com.epam.training.student_vasili_urusau.fundamental.options.task1;
 import com.epam.training.student_vasili_urusau.fundamental.options.UtilMethodInPut;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MaxMinNumberLength {
 
     public static void main(String[] args) {
-        ArrayList list = UtilMethodInPut.createArray();
+        List list = UtilMethodInPut.createArray();
         minMaxNumberLength(list);
     }
 
 
-    public static void minMaxNumberLength(ArrayList<Integer> list){
+    public static void minMaxNumberLength(List<Integer> list){
         int maxValue = 0;
         int minValue = list.get(0);
         int maxL = 0;
