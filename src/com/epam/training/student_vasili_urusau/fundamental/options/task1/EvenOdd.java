@@ -1,10 +1,9 @@
 package com.epam.training.student_vasili_urusau.fundamental.options.task1;
 
-import com.epam.training.student_vasili_urusau.fundamental.options.UtilMethodInPut;
+import com.epam.training.student_vasili_urusau.fundamental.options.util.UtilMethodInPut;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class EvenOdd {
     public static void main(String[] args) {

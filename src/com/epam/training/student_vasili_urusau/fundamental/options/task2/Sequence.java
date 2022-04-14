@@ -1,16 +1,15 @@
 package com.epam.training.student_vasili_urusau.fundamental.options.task2;
 
-import com.epam.training.student_vasili_urusau.fundamental.options.UtilMethodInPut;
+import com.epam.training.student_vasili_urusau.fundamental.options.util.UtilMatrix;
+import com.epam.training.student_vasili_urusau.fundamental.options.util.UtilMethodInPut;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Sequence {
     public static void main(String[] args) {
-        int[][] matrix = UtilMethodInPut.createMatrix();
-        UtilMethodInPut.matrixToString(matrix);
-        System.out.println(sequenceUp(matrix));
-        System.out.println(sequenceDown(matrix));
+        UtilMatrix matrix = UtilMethodInPut.createMatrix();
+
     }
 
     public static List<Integer> sequenceUp(int[][] matrix){

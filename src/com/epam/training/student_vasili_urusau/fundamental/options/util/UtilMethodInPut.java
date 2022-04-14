@@ -1,4 +1,4 @@
-package com.epam.training.student_vasili_urusau.fundamental.options;
+package com.epam.training.student_vasili_urusau.fundamental.options.util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +24,9 @@ public class UtilMethodInPut {
         scan.close();
         return list;
     }
-    public static int[][] createMatrix(){
+    public static UtilMatrix createMatrix(){
         Scanner scan = new Scanner(System.in);
+        UtilMatrix utilMatrix;
         int n = 0;
         int m = 0;
 
@@ -59,15 +60,8 @@ public class UtilMethodInPut {
                 matrix[i][j] = (int) ((Math.random()*2 - 1)*m);
             }
         }
-        return matrix;
+        utilMatrix = new UtilMatrix(m, matrix);
+        return utilMatrix;
     }
-    public static void matrixToString(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            System.out.print("|");
-            for (int j = 0; j < matrix.length; j++) {
-                System.out.printf("%5d|", matrix[i][j]);
-            }
-            System.out.println("");
-        }
-    }
+
 }
