@@ -1,7 +1,5 @@
 package com.epam.training.student_vasili_urusau.fundamental.options.task1;
 
-import com.epam.training.student_vasili_urusau.fundamental.options.util.UtilMethodInPut;
-
 import java.util.List;
 
 public class MaxMinNumberLength {
