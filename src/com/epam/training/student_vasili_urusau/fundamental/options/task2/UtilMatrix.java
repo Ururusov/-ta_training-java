@@ -27,7 +27,7 @@ public class UtilMatrix {
                     System.exit(0);
                 }
 
-                 System.out.println("Если вы хотите остановит программу введите 'exit'");
+                System.out.println("Если вы хотите остановит программу введите 'exit'");
                 System.out.println("Пожалуйста введите целое положительное число.\n"
                         + error + " это значение не подходит. Попробуйте снова. \n n = ");
             }
@@ -49,6 +49,7 @@ public class UtilMatrix {
                 if (error.equalsIgnoreCase("exit")){
                     System.exit(0);
                 }
+                System.out.println("Если вы хотите остановит программу введите 'exit'");
                 System.out.println("Пожалуйста введите целое число.\n"
                         + error + " это значение не подходит. Попробуйте снова. \n M = ");
             }
@@ -207,6 +208,54 @@ public class UtilMatrix {
             }
         }
         return maxSequence;
+    }
+
+    public static int[][] bubbleSortColum(int[][] matrix, int number) {
+        int goodPairsCounter = 0;
+        int i = 0;
+
+        while (true){
+            if (matrix[i][number] > matrix[i + 1][number]){
+                for (int j = 0; j < matrix[0].length; j++) {
+                    int f = matrix[i][j];
+                    matrix[i][j] = matrix[i + 1][j];
+                    matrix[i + 1][j] = f;
+                    goodPairsCounter = 0;
+                }
+            }else {
+                goodPairsCounter++;
+            } i++;
+            if (i == matrix[0].length -1){
+                i = 0;
+            } if ( goodPairsCounter == matrix[0].length - 1){
+                break;
+            }
+        }
+        return matrix;
+    }
+
+    public static int[][] bubbleSortLine(int[][] matrix, int number) {
+        int goodPairsCounter = 0;
+        int i = 0;
+
+        while (true){
+            if (matrix[number][i] > matrix[number][i + 1]){
+                for (int j = 0; j < matrix.length; j++) {
+                    int f = matrix[j][i];
+                    matrix[j][i] = matrix[j][i + 1];
+                    matrix[j][i + 1] = f;
+                    goodPairsCounter = 0;
+                }
+            }else {
+                goodPairsCounter++;
+            } i++;
+            if (i == matrix.length -1){
+                i = 0;
+            } if ( goodPairsCounter == matrix.length - 1){
+                break;
+            }
+        }
+        return matrix;
     }
 
 

@@ -1,4 +1,4 @@
-package com.epam.training.student_vasili_urusau.fundamental.options.task2.sort_matrix;
+package com.epam.training.student_vasili_urusau.fundamental.options.task2.sort;
 
 import com.epam.training.student_vasili_urusau.fundamental.options.task2.UtilMatrix;
 
@@ -14,62 +14,16 @@ public class SortMatrix {
         matrix = sortMatrix(matrix);
         System.out.println("------------------------------");
         UtilMatrix.printMatrix(matrix, range);
-    }
+        System.out.println("------------------------------");
 
-    public static int[][] sortLine(int[][] matrix, int number) {
-        int goodPairsCounter = 0;
-        int i = 0;
-
-        while (true){
-            if (matrix[number][i] > matrix[number][i + 1]){
-                for (int j = 0; j < matrix.length; j++) {
-                    int f = matrix[j][i];
-                    matrix[j][i] = matrix[j][i + 1];
-                    matrix[j][i + 1] = f;
-                    goodPairsCounter = 0;
-                }
-            }else {
-                goodPairsCounter++;
-            } i++;
-            if (i == matrix.length -1){
-                i = 0;
-            } if ( goodPairsCounter == matrix.length - 1){
-                break;
-            }
-        }
-        return matrix;
-    }
-
-    public static int[][] sortColum(int[][] matrix, int number) {
-        int goodPairsCounter = 0;
-        int i = 0;
-
-        while (true){
-            if (matrix[i][number] > matrix[i + 1][number]){
-                for (int j = 0; j < matrix[0].length; j++) {
-                    int f = matrix[i][j];
-                    matrix[i][j] = matrix[i + 1][j];
-                    matrix[i + 1][j] = f;
-                    goodPairsCounter = 0;
-                }
-            }else {
-                goodPairsCounter++;
-            } i++;
-            if (i == matrix[0].length -1){
-                i = 0;
-            } if ( goodPairsCounter == matrix[0].length - 1){
-                break;
-            }
-        }
-        return matrix;
     }
 
 
     public static int[][] sortMatrix(int[][] matrix){
         if (enterSelection() == 0){
-            matrix = sortLine(matrix, choiceNumberLine(matrix));
+            matrix = UtilMatrix.bubbleSortLine(matrix, choiceNumberLine(matrix));
         }else {
-            matrix = sortColum(matrix, choiceNumberColum(matrix));
+            matrix = UtilMatrix.bubbleSortColum(matrix, choiceNumberColum(matrix));
         }
         return matrix;
     }
