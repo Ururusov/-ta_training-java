@@ -1,6 +1,6 @@
 package com.epam.training.student_vasili_urusau.fundamental.options.task2.sort;
 
-import com.epam.training.student_vasili_urusau.fundamental.options.task2.UtilMatrix;
+import com.epam.training.student_vasili_urusau.fundamental.options.util.UtilMatrix;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -10,11 +10,15 @@ public class SortMatrix {
         int size = UtilMatrix.enterSizeForMatrix();
         int range = UtilMatrix.enterRangeForValueInMatrix();
         int [][] matrix = UtilMatrix.createMatrix(size, range);
+        ResultSort resultSort = new ResultSort(matrix);
         UtilMatrix.printMatrix(matrix, range);
         matrix = sortMatrix(matrix);
+        resultSort.setMatrixSort(matrix);
         System.out.println("------------------------------");
-        UtilMatrix.printMatrix(matrix, range);
+        UtilMatrix.printMatrix(resultSort.getMatrixSort(), range);
         System.out.println("------------------------------");
+
+
 
     }
 

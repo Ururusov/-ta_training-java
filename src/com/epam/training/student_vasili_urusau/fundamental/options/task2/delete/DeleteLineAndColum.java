@@ -1,6 +1,6 @@
 package com.epam.training.student_vasili_urusau.fundamental.options.task2.delete;
 
-import com.epam.training.student_vasili_urusau.fundamental.options.task2.UtilMatrix;
+import com.epam.training.student_vasili_urusau.fundamental.options.util.UtilMatrix;
 
 import java.util.Arrays;
 
