@@ -1,6 +1,6 @@
-package com.epam.training.student_vasili_urusau.fundamental.options.task2.delete_line_and_colum;
+package com.epam.training.student_vasili_urusau.fundamental.options.task2.delete;
 
-import com.epam.training.student_vasili_urusau.fundamental.options.task2.UtilMatrix;
+import com.epam.training.student_vasili_urusau.fundamental.options.util.UtilMatrix;
 
 public class ResultMatrix {
    private int range ;

@@ -1,4 +1,4 @@
-package com.epam.training.student_vasili_urusau.fundamental.options.task2;
+package com.epam.training.student_vasili_urusau.fundamental.options.util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -114,22 +114,22 @@ public class UtilMatrix {
 
     public static int[][] deleteLineAndColum(int[][] matrix, int numberLine, int numberColum) {
         int l;
-        int matrixAfterDelet[][] = new int[matrix.length - 1][matrix.length - 1];
-        for (int i = 0; i < matrixAfterDelet.length; i++) {
+        int matrixAfterDelete[][] = new int[matrix.length - 1][matrix.length - 1];
+        for (int i = 0; i < matrixAfterDelete.length; i++) {
             if (i < numberLine) {
                 l = i;
             } else {
                 l = i + 1;
             }
-            for (int j = 0; j < matrixAfterDelet.length; j++) {
+            for (int j = 0; j < matrixAfterDelete.length; j++) {
                 if (j < numberColum) {
-                    matrixAfterDelet[i][j] = matrix[l][j];
+                    matrixAfterDelete[i][j] = matrix[l][j];
                 } else {
-                    matrixAfterDelet[i][j] = matrix[l][j + 1];
+                    matrixAfterDelete[i][j] = matrix[l][j + 1];
                 }
             }
         }
-        return matrixAfterDelet;
+        return matrixAfterDelete;
     }
 
     public static int indexLineOfMaxValue(int[][] matrix){
@@ -161,8 +161,8 @@ public class UtilMatrix {
     public static List<Integer> sequenceDownInLine(int[][] matrix){
         List maxSequence = new ArrayList<Integer>();
         List sequence = new ArrayList<Integer>();
-        sequence.clear();
         for (int i = 0; i < matrix.length; i++) {
+            sequence.clear();
             for (int j = 0; j < matrix[i].length - 1 ; j++) {
                 if (matrix[i][j] > matrix[i][j + 1]){
                     if (sequence.size() == 0){
@@ -209,5 +209,52 @@ public class UtilMatrix {
         return maxSequence;
     }
 
+    public static int[][] bubbleSortLine(int[][] matrix, int number) {
+        int goodPairsCounter = 0;
+        int i = 0;
+
+        while (true){
+            if (matrix[number][i] > matrix[number][i + 1]){
+                for (int j = 0; j < matrix.length; j++) {
+                    int f = matrix[j][i];
+                    matrix[j][i] = matrix[j][i + 1];
+                    matrix[j][i + 1] = f;
+                    goodPairsCounter = 0;
+                }
+            }else {
+                goodPairsCounter++;
+            } i++;
+            if (i == matrix.length -1){
+                i = 0;
+            } if ( goodPairsCounter == matrix.length - 1){
+                break;
+            }
+        }
+        return matrix;
+    }
+
+    public static int[][] bubbleSortColum(int[][] matrix, int number) {
+        int goodPairsCounter = 0;
+        int i = 0;
+
+        while (true){
+            if (matrix[i][number] > matrix[i + 1][number]){
+                for (int j = 0; j < matrix[0].length; j++) {
+                    int f = matrix[i][j];
+                    matrix[i][j] = matrix[i + 1][j];
+                    matrix[i + 1][j] = f;
+                    goodPairsCounter = 0;
+                }
+            }else {
+                goodPairsCounter++;
+            } i++;
+            if (i == matrix[0].length -1){
+                i = 0;
+            } if ( goodPairsCounter == matrix[0].length - 1){
+                break;
+            }
+        }
+        return matrix;
+    }
 
 }
