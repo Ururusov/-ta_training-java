@@ -1,4 +1,4 @@
-package com.epam.training.student_vasili_urusau;
+package com.epam.training.student_vasili_urusau.fundamental.options;
 
 import java.util.ArrayList;
 import java.util.List;

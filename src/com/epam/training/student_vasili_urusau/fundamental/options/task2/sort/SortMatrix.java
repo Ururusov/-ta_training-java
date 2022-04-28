@@ -11,27 +11,28 @@ public class SortMatrix {
         int range = UtilMatrix.enterRangeForValueInMatrix();
         int [][] matrix = UtilMatrix.createMatrix(size, range);
         ResultSort resultSort = new ResultSort(matrix);
-        UtilMatrix.printMatrix(matrix, range);
-        matrix = sortMatrix(matrix);
+        UtilMatrix.quickSortLineWithMatrix(matrix, 3);
         resultSort.setMatrixSort(matrix);
+        UtilMatrix.bubbleSortColum(matrix,3);
+        UtilMatrix.printMatrix(resultSort.getMatrix(), range);
         System.out.println("------------------------------");
         UtilMatrix.printMatrix(resultSort.getMatrixSort(), range);
+        System.out.println("------------------------------");
+        UtilMatrix.printMatrix(matrix, range);
         System.out.println("------------------------------");
 
 
 
     }
 
-
-    public static int[][] sortMatrix(int[][] matrix){
+/*    public static int[][] sortMatrix(int[][] matrix){
         if (enterSelection() == 0){
             matrix = UtilMatrix.bubbleSortLine(matrix, choiceNumberLine(matrix));
         }else {
             matrix = UtilMatrix.bubbleSortColum(matrix, choiceNumberColum(matrix));
         }
         return matrix;
-    }
-
+    }*/
     public static int enterSelection(){
         int selection;
         Scanner scanner = new Scanner(System.in);

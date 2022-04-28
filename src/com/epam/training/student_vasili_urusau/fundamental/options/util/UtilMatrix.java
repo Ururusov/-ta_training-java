@@ -210,7 +210,7 @@ public class UtilMatrix {
         return maxSequence;
     }
 
-    public static int[][] bubbleSortColum(int[][] matrix, int number) {
+    public static void bubbleSortColum(int[][] matrix, int number) {
         int goodPairsCounter = 0;
         int i = 0;
 
@@ -231,10 +231,9 @@ public class UtilMatrix {
                 break;
             }
         }
-        return matrix;
     }
 
-    public static int[][] bubbleSortLine(int[][] matrix, int number) {
+    public static void bubbleSortLine(int[][] matrix, int number) {
         int goodPairsCounter = 0;
         int i = 0;
 
@@ -255,8 +254,65 @@ public class UtilMatrix {
                 break;
             }
         }
-        return matrix;
     }
 
+    public static void quickSortLineWithMatrix(int[][] matrix, int number){
+        recQuickSort(matrix, number, 0, matrix[number].length - 1);
+        bubbleSortLine(matrix, number);
+    }
+
+    public static void recQuickSort(int[][] matrix, int number, int left, int right){
+        int size = right - left + 1;
+        if (size > 3){
+            int median = medianOf3(matrix, number, left, right);
+            int partition = partitionIt(matrix, number, left, right, median);
+            recQuickSort(matrix, number, left, partition - 1);
+            recQuickSort(matrix, number, partition + 1, right);
+        }
+
+    }
+
+     private static int medianOf3(int[][] matrix, int number, int left, int right){
+        int center = (left + right) / 2;
+        if (matrix[number][left] > matrix[number][center]){
+            swapAllColumInMatrix(matrix, number, left, center);
+        }
+        if (matrix[number][left] > matrix[number][right]){
+            swapAllColumInMatrix(matrix, number, left, right);
+        }
+        if (matrix[number][center] > matrix[number][right]){
+            swapAllColumInMatrix(matrix, number, center, right);
+        }
+        swapAllColumInMatrix(matrix, number, center, right-1);
+        return matrix[number][right -1];
+    }
+
+    private static int partitionIt(int[][] matrix, int number, int left, int right, int pivot){
+        int leftPtr = left;
+        int rightPtr = right - 1;
+            while(true){
+                 while(matrix[number][++leftPtr] < pivot){
+
+                 }
+                 while (matrix[number][--rightPtr] > pivot){
+
+                 }
+                 if (leftPtr > rightPtr){
+                     break;
+                 }else {
+                     swapAllColumInMatrix(matrix, number, leftPtr, rightPtr);
+                 }
+            }
+        swapAllColumInMatrix(matrix, number, leftPtr, right - 1);
+        return leftPtr;
+    }
+
+    public static void swapAllColumInMatrix(int[][] matrix, int number, int dex1, int dex2){
+        for (int i = 0; i < matrix[number].length; i++) {
+            int temp = matrix[i][dex1];
+            matrix[i][dex1] = matrix[i][dex2];
+            matrix[i][dex2] = temp;
+        }
+    }
 
 }

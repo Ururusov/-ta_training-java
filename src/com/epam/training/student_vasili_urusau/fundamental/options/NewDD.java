@@ -1,6 +1,4 @@
-package com.epam.training.student_vasili_urusau;
-
-import com.epam.training.student_vasili_urusau.fundamental.options.task1.MinDifferentDigits;
+package com.epam.training.student_vasili_urusau.fundamental.options;
 
 import java.util.*;
 
